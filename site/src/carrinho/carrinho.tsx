@@ -11,7 +11,7 @@ const Carrinho: React.FC = () => {
   };
 
   const calcularTotal = () => {
-    return produtos.reduce((total, produto) => total + parseFloat(produto.preco), 0).toFixed(2);
+    return produtos.reduce((total, produto) => total + parseFloat(produto.preco.replace('R$ ', '').replace('.', '.').replace(',', '.')), 0).toLocaleString(undefined, {style: 'currency', currency: 'BRL'});
   };
 
   return (
@@ -26,12 +26,12 @@ const Carrinho: React.FC = () => {
               <img src={produto.imagem} alt={produto.nome} className="produto-imagem" />
               <div className="produto-info">
                 <h3>{produto.nome}</h3>
-                <p>Preço: R$ {produto.preco}</p>
+                <p>Preço: {produto.preco}</p>
               </div>
             </div>
           ))}
           <div className="resumo-carrinho">
-            <h2>Total: R$ {calcularTotal()}</h2>
+            <h2>Total: {calcularTotal()}</h2>
             <button onClick={handleFinalizarCompra} className="finalizar-compra">
               Finalizar Compra
             </button>

@@ -52,7 +52,7 @@ const Produtos: React.FC = () => {
       <div className="produtos-grid">
         {produtos.map(produto => (
           <div key={produto.id} className="produto-card">
-            <img src={produto.imagem} alt={produto.nome} />
+            <img src={produto.imagem} alt={produto.nome} style={{aspectRatio: '1/1', objectFit: 'contain'}} />
             <h3>{produto.nome}</h3>
             <p>{produto.preco}</p>
             <button onClick={() => handleAdicionarAoCarrinho(produto)}>Comprar</button>
