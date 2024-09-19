@@ -1,0 +1,18 @@
+.contato {
+    padding: 20px;
+  }
+  
+  .contato form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .contato label {
+    margin: 10px 0 5px;
+  }
+  
+  .contato input, .contato textarea {
+    padding: 10px;
+    margin-bottom: 15px;
+  }
+  
